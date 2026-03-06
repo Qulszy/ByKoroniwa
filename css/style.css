@@ -1,0 +1,886 @@
+/* ============================================
+   PORTFÓLIO DE FOTOGRAFIA - ESTILOS GLOBAIS
+   Design Minimalista, Moderno e Profissional
+   ============================================ */
+
+/* Import Google Fonts - Bebas Neue para títulos street style, Playfair Display e Inter para corpo */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Reset e Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #000000;
+    --secondary-bg: #000000;
+    --tertiary-bg: #252525;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent: #ffffff;
+    --transition: all 0.3s ease;
+    
+    /* Tipografia */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-elegant: 'Playfair Display', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 400;
+}
+
+/* ============================================
+   NAVBAR - Navegação Minimalista Fixa
+   ============================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.navbar-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    font-size: 34px;
+    text-decoration: none;
+    transition: var(--transition);
+    font-family: var(--font-display);
+}
+
+.navbar-logo a img {
+    height: 125px;
+    width: auto;
+    color: white;
+    text-decoration: none;
+    max-height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.navbar-logo a:hover {
+    opacity: 0.7;
+}
+
+.navbar-logo a:hover img {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    position: relative;
+    font-family: var(--font-body);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Menu Toggle para Mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: var(--transition);
+}
+
+/* ============================================
+   HERO SECTION - Destaque com Imagem
+   ============================================ */
+
+.hero {
+    margin-top: 70px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: relative;
+    background: black;
+    gap: 60px;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 10;
+    animation: fadeInLeft 0.8s ease;
+}
+
+.hero-image {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInRight 0.8s ease;
+    border-radius: 8px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-family: var(--font-body);
+}
+
+.hero-description {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 400px;
+    line-height: 1.8;
+    font-family: var(--font-body);
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 14px 40px;
+    background-color: var(--text-primary);
+    color: var(--primary-bg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    border: 1px solid var(--text-primary);
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
+.hero-cta:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+/* Animações */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   GALERIA - Grid Responsivo e Elegante
+   ============================================ */
+
+.galeria {
+    padding: 100px 40px;
+    background-color: var(--primary-bg);
+}
+
+.galeria-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeIn 0.6s ease;
+}
+
+.galeria-header h2 {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.galeria-header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    font-family: var(--font-body);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+    animation: fadeIn 0.6s ease;
+    /* Estilo refinado da imagem com border-radius e sombra discreta */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.galeria-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.galeria-overlay p {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-family: var(--font-body);
+}
+
+/* Efeito hover suave e elegante - zoom leve (1.05 em vez de 1.08) */
+.galeria-item:hover img {
+    transform: scale(1.05);
+}
+
+.galeria-item:hover .galeria-overlay {
+    opacity: 1;
+}
+
+/* ============================================
+   LIGHTBOX - Visualizador de Fotos
+   ============================================ */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 40px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 2001;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+#lightboxCaption {
+    margin-top: 20px;
+    font-size: 16px;
+    color: var(--text-secondary);
+    text-align: center;
+    font-family: var(--font-body);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-primary);
+    font-size: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 2001;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 30px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+}
+
+/* ============================================
+   SEÇÃO SOBRE - Apresentação do Fotógrafo
+   ============================================ */
+
+.sobre {
+    padding: 100px 40px;
+    background-color: var(--secondary-bg);
+}
+
+.sobre-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.sobre-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    animation: fadeInLeft 0.8s ease;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sobre-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.sobre-image:hover img {
+    transform: scale(1.02);
+}
+
+.sobre-content {
+    animation: fadeInRight 0.8s ease;
+}
+
+.sobre-content h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.sobre-content p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    font-family: var(--font-body);
+}
+
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.skill {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--tertiary-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    font-family: var(--font-body);
+    border-radius: 4px;
+}
+
+.skill:hover {
+    border-color: var(--text-primary);
+    background-color: var(--tertiary-bg);
+}
+
+/* ============================================
+   SEÇÃO CONTATO - Chamada para Ação
+   ============================================ */
+
+.contato {
+    padding: 100px 40px;
+    background-color: var(--primary-bg);
+    text-align: center;
+}
+
+.contato-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato-container h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+.contato-container > p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 50px;
+    line-height: 1.8;
+    font-family: var(--font-body);
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contato-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 30px;
+    background-color: var(--tertiary-bg);
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    cursor: pointer;
+    font-family: var(--font-body);
+    border-radius: 4px;
+}
+
+.contato-btn:hover {
+    background-color: var(--tertiary-bg);
+    border-color: var(--text-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(122, 120, 120, 0.3);
+}
+
+.contato-btn .icon {
+    font-size: 18px;
+}
+
+/* ============================================
+   FOOTER - Rodapé Minimalista
+   ============================================ */
+
+.footer {
+    background-color: var(--secondary-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    font-family: var(--font-body);
+}
+
+.footer-sociais {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-sociais a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+    font-family: var(--font-body);
+}
+
+.footer-sociais a:hover {
+    color: var(--text-primary);
+}
+
+/* ============================================
+   RESPONSIVIDADE - Mobile e Tablet
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 0 30px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 0 30px;
+        height: auto;
+        min-height: 100vh;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: 52px;
+    }
+
+    .hero-image {
+        height: 400px;
+    }
+
+    .sobre-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contato-links {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(15, 15, 15, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 0 20px;
+        height: auto;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .galeria {
+        padding: 60px 20px;
+    }
+
+    .galeria-header h2 {
+        font-size: 36px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .sobre {
+        padding: 60px 20px;
+    }
+
+    .sobre-content h2 {
+        font-size: 32px;
+    }
+
+    .contato {
+        padding: 60px 20px;
+    }
+
+    .contato-container h2 {
+        font-size: 36px;
+    }
+
+    .contato-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contato-btn {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        padding: 10px 15px;
+        font-size: 24px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0 15px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-cta {
+        font-size: 12px;
+        padding: 12px 30px;
+    }
+
+    .galeria-header h2 {
+        font-size: 28px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-content h2 {
+        font-size: 28px;
+    }
+
+    .contato-container h2 {
+        font-size: 28px;
+    }
+
+    .contato-btn {
+        font-size: 12px;
+        padding: 14px 20px;
+    }
+
+    .skill {
+        font-size: 12px;
+    }
+
+    .habilidades {
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   SCROLLBAR PERSONALIZADA
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-primary);
+}
